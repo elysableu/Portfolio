@@ -1,0 +1,36 @@
+.Popout {
+  background-color: var(--accent-lower-op); 
+  border-radius: 10px 0px 10px 10px; 
+  font-family: 'Noto Sans Modi', sans-serif;
+  position: relative;
+  top: 85px;
+  padding: 10px;
+  text-align: left;
+  -webkit-box-shadow: 10px 15px 5px 0px rgba(0,0,0,0.46);
+  -moz-box-shadow: 10px 15px 5px 0px rgba(0,0,0,0.46);
+  box-shadow: 10px 15px 5px 0px rgba(0,0,0,0.46);
+}
+
+.Popout-Inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.Input-Label {
+    margin-left: 10px;
+}
+
+.Login-Input {
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.Popout-Inner button {
+    width: 60%;
+}
+

@@ -1,0 +1,26 @@
+.Track {
+    font-family: 'Noto Serif Kannada', serif;
+    background-color: var(--secdonary);
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.Track-action {
+    margin-right: 15px;
+}
+
+.Track-action:hover {
+    cursor: pointer;
+}
+
+.Track-Info {
+    margin-left: 15px;
+}
+
+.track-info p {
+    font-weight: normal;
+}

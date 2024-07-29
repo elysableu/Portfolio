@@ -1,0 +1,38 @@
+.SearchBar {
+   display: flex;
+   flex-direction: column;
+   position:relative;
+   margin: 5vh;
+}
+
+.SearchBar input{
+   border-radius: 5px;
+}
+
+.SearchBar button {
+    margin-top: 15px;
+    justify-content: center;
+    background-color: var(--accent);
+    border-radius: 100px;
+    box-shadow: var(--secdonary) 0 -25px 18px -14px inset, var(--accent) 0 1px 2px, var(--accent) 0 2px 4px, var(--accent) 0 4px 8px, var(--primary) 0 8px 16px, var(--accent) 0 16px 32px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 9px 20px 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 14px;
+    font-family: 'Noto Serif Kannada', serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    }
+    
+    .SearchBar button:hover {
+    box-shadow: var(--secdonary) 0 -25px 18px -14px inset, var(--accent) 0 1px 2px, var(--primary) 0 2px 4px, var(--secdonary) 0 4px 8px, var(--secdonary) 0 8px 16px, var(--accent) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+    }
+    

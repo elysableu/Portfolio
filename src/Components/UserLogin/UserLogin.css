@@ -1,0 +1,10 @@
+.User-Login {
+    display: flex;
+    position: relative;
+    
+}
+
+.Login-Icon {
+    background-color: transparent;
+    border: 1px solid var(--background);
+}

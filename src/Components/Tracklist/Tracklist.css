@@ -1,0 +1,8 @@
+.TrackList {
+    background-color: var(--background-med-op);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    overflow-y: scroll;
+    min-height: 680px;
+}
