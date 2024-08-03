@@ -1,38 +1,24 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useCallback} from 'react';
 import './App.css';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 import SearchBar from '../SearchBar/SearchBar';
 import UserLogin from '../UserLogin/UserLogin';
 import Spotify from '../../Util/Spotify';
-import temp from '../../TempTrackList';
+//import temp from '../../TempTrackList';
 
 function App() {
   //const tempTracks = temp && temp.map(({name, artist, album , id}) => ({name, artist, album, id}));
-  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [username, setUsername] = useState('');
   const [password, setPassword]  = useState('');
 
-  useEffect(() => {
-    Spotify.getAuthorization();
-  }, [])
-
-  /*
-  useEffect(() => {
-    Spotify.getAccessToken();
-  }, []);
-  */
-
   const setLogin = useCallback((user, pass) => {
     setUsername(user);
     setPassword(pass);
   }, []);
-
-  //console.log(username);
-  //console.log(password);
 
   const submitLogin = useCallback(
 
@@ -44,8 +30,8 @@ function App() {
     }, []
   );
 
-  const search = useCallback(() => {
-    Spotify.search(searchTerm).then(setSearchResults);
+  const search = useCallback((term) => {
+    Spotify.search(term).then(setSearchResults);
   }, []);
 
   const addToPlaylist = useCallback((track) =>
@@ -96,7 +82,7 @@ function App() {
       </header>
       <main>
         <div className="SearchBar-Container">
-          <SearchBar onSearch={search} term={searchTerm} setTerm={setSearchTerm} />
+          <SearchBar onSearch={search} />
         </div>
         <div className="App-Container">
           <SearchResults 

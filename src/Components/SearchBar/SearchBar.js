@@ -2,23 +2,25 @@ import React, {useCallback, useState} from 'react';
 import './SearchBar.css';
 
 const SearchBar = (props) => {
-    
+    const [term, setTerm] = useState("");
+
     const handleTermChange = useCallback((event) => {
-        props.setTerm(event.target.value);
+        setTerm(event.target.value);
     }, []);
 
     const search = useCallback(() => {
-        props.onSearch();
-    }, [props.onSearch, props.searchTerm]);
+        props.onSearch(term);
+    }, [props.onSearch, term]);
 
     return (
         <div className="SearchBar">
             <input className="Search-Input" 
-                placeholder="Search a title" 
+                placeholder="Search a title"
+                value={term} 
                 onChange={handleTermChange} 
                 onKeyDown={(event) => {
                     if(event.key === "Enter") 
-                        search(event);
+                        search(term);
                 }} 
             />
             <button className="Submit-Button" onClick={search}>Search</button>
