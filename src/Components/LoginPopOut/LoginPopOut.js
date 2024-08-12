@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import './LoginPopOut.css';
 
 const LoginPopOut = (props) => {

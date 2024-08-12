@@ -12,17 +12,12 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
-  const [username, setUsername] = useState('');
-  const [password, setPassword]  = useState('');
-
-  const setLogin = useCallback((user, pass) => {
-    setUsername(user);
-    setPassword(pass);
-  }, []);
-
+  
+  /*
   const submitLogin = useCallback(
 
   );
+  */
 
   const updatePlaylistName = useCallback(
     (name) => {
@@ -44,15 +39,16 @@ function App() {
 
   const removeFromPlaylist = useCallback((trackToRemove) => {
       setPlaylistTracks((prevTracks) => 
-        prevTracks.filter((track) => track.id != trackToRemove.id)
+        prevTracks.filter((track) => track.id !== trackToRemove.id)
         );
       }, []);
 
-
+  /*
   const savePlaylist = useCallback(
 
   );
-          
+  */
+
   /*
   //Load temptracks to test functionality ********************
   const loadToSearch = useCallback((testTrack) => {
@@ -77,7 +73,7 @@ function App() {
       <header className="App-header">
         <h1>Jammming</h1>
         <div className="User-Login">
-          <UserLogin onLogin={setLogin} submitLogin={submitLogin} username={username} password={password} />
+          <UserLogin /*submitLogin={submitLogin}*/ />
         </div>
       </header>
       <main>
