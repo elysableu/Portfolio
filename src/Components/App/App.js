@@ -18,7 +18,6 @@ function App() {
 
   );
 
-
   const updatePlaylistName = useCallback(
     (name) => {
       setPlaylistName(name);
