@@ -2,6 +2,8 @@ import React, {useCallback, useState} from 'react';
 import './SearchBar.css';
 
 const SearchBar = (props) => {
+    const {onSearch} = props;
+
     const [term, setTerm] = useState("");
 
     const handleTermChange = useCallback((event) => {
@@ -9,8 +11,8 @@ const SearchBar = (props) => {
     }, []);
 
     const search = useCallback(() => {
-        props.onSearch(term);
-    }, [props.onSearch, term]);
+        onSearch(term);
+    }, [onSearch, term]);
 
     return (
         <div className="SearchBar">

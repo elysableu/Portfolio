@@ -2,23 +2,24 @@ import React, {useCallback} from 'react';
 import './Track.css';
 
 const Track = (props) => {
+    const {key, track, onAdd, onRemove, isRemoval} = props;
 
     const addTrack = useCallback(
         (event) => {
-            props.onAdd(props.track);
+            onAdd(track);
         },
-        [props.onAdd, props.track]
+        [onAdd, track]
     );
 
     const removeTrack = useCallback(
         (event) => {
-            props.onRemove(props.track);
+            onRemove(track);
         },
-        [props.onRemove, props.track]
+        [onRemove, track]
     );
 
     const renderAction = () => {
-        if(props.isRemoval) {
+        if(isRemoval) {
             return (
                 <button className="Track-action" onClick={removeTrack}>
                     -
@@ -35,8 +36,8 @@ const Track = (props) => {
     return (
         <div className="Track">
             <div className="Track-Info">
-                <h3>{props.track.name}</h3>
-                <p>{props.track.artist} | {props.track.album}</p>
+                <h3>{track.name}</h3>
+                <p>{track.artist} | {track.album}</p>
             </div>
             {renderAction()}
         </div>
